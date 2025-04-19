@@ -6,8 +6,23 @@
 /*   By: mazri <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/19 11:30:06 by mazri             #+#    #+#             */
-/*   Updated: 2025/04/19 11:30:08 by mazri            ###   ########.fr       */
+/*   Updated: 2025/04/19 11:36:14 by mazri            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+void	ft_putnbr(int n)
+{
+	char	c;
 
+	c = n + '0';
+	write(1, &c, 1);
+}
+
+int	ft_strlen(char *str)
+{
+	int	i = 0;
+
+	while (str[i])
+		i++;
+	return (i);
+}
