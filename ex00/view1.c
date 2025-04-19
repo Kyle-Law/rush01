@@ -6,7 +6,7 @@
 /*   By: hbinti-d <hbinti-d@student.42iskandar      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/19 12:22:16 by hbinti-d          #+#    #+#             */
-/*   Updated: 2025/04/19 17:47:19 by zlaw             ###   ########.fr       */
+/*   Updated: 2025/04/19 23:21:38 by zlaw             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ int	is_correct_right_view(char **puzzle_board, int row)
 
 int	is_correct_left_view(char **puzzle_board, int row)
 {
-	int	i;
+	int		i;
 	char	visible;
 	char	highest;
 
@@ -79,7 +79,7 @@ int	is_correct_bottom_view(char **puzzle_board, int column)
 
 int	is_correct_top_view(char **puzzle_board, int column)
 {
-	int	i;
+	int		i;
 	char	visible;
 	char	highest;
 
