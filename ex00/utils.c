@@ -6,7 +6,7 @@
 /*   By: mazri <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/19 11:30:06 by mazri             #+#    #+#             */
-/*   Updated: 2025/04/19 11:36:14 by mazri            ###   ########.fr       */
+/*   Updated: 2025/04/19 15:53:00 by hbinti-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,8 +20,9 @@ void	ft_putnbr(int n)
 
 int	ft_strlen(char *str)
 {
-	int	i = 0;
+	int	i;
 
+	i = 0;
 	while (str[i])
 		i++;
 	return (i);
