@@ -6,7 +6,7 @@
 /*   By: zlaw <zlaw@student.42ip.edu.my>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/19 16:12:07 by zlaw              #+#    #+#             */
-/*   Updated: 2025/04/19 16:15:16 by zlaw             ###   ########.fr       */
+/*   Updated: 2025/04/19 16:37:18 by zlaw             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,14 +23,14 @@ void	rush_recursive(char **board, int row, int col)
 		{
 			board[row][col] = i + '0';
 			if (row == 4 && !is_correct_top_view(board, col))
-				return ();
+				break;
 			if (col == 4)
 			{
 				if (is_correct_left_view(board, row))
 				{
 					rush_recursive(board, row + 1, 1);
 					if (row == 4 && is_correct_top_view(board, col))
-						print_solution(puzzle_board);
+						print_solution(board);
 				}
 			}
 			else
