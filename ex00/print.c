@@ -6,7 +6,7 @@
 /*   By: surajend <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/19 14:07:26 by surajend          #+#    #+#             */
-/*   Updated: 2025/04/20 16:49:13 by zlaw             ###   ########.fr       */
+/*   Updated: 2025/04/20 17:06:41 by zlaw             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,11 +22,10 @@ void	print_error(void)
 	write(1, "Error\n", 6);
 }
 
-void	mark_success(char **puzzle_board)
+int	mark_success(char **puzzle_board)
 {
-	if (puzzle_board[0][0] == '1')
-		return ;
 	puzzle_board[0][0] = '1';
+	return (1);
 }
 
 void	print_solution(char **puzzle_board)
@@ -35,9 +34,6 @@ void	print_solution(char **puzzle_board)
 	int	j;
 
 	i = 1;
-	if (puzzle_board[0][0] == '1')
-		return ;
-	puzzle_board[0][0] = '1';
 	while (i <= 4)
 	{
 		j = 1;
