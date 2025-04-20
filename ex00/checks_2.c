@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   view2.c                                            :+:      :+:    :+:   */
+/*   checks_2.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hbinti-d <hbinti-d@student.42iskandar      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/19 17:07:53 by hbinti-d          #+#    #+#             */
-/*   Updated: 2025/04/19 17:51:18 by zlaw             ###   ########.fr       */
+/*   Updated: 2025/04/20 16:47:30 by zlaw             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,13 +40,14 @@ int	is_in_column(char **puzzle_board, int row, int column, int digit)
 	return (0);
 }
 
-
-int is_correct_row(char **board, int row)
+int	is_correct_row(char **board, int row)
 {
-	return ((is_correct_left_view(board, row)) && (is_correct_right_view(board, row)));
+	return ((is_correct_left_view(board, row))
+		&& (is_correct_right_view(board, row)));
 }
 
 int	is_correct_col(char **board, int col)
 {
-	return ((is_correct_top_view(board, col)) && (is_correct_bottom_view(board, col)));
+	return ((is_correct_top_view(board, col))
+		&& (is_correct_bottom_view(board, col)));
 }
