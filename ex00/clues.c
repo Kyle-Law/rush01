@@ -6,7 +6,7 @@
 /*   By: hbinti-d <hbinti-d@student.42iskandar      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/19 11:54:15 by hbinti-d          #+#    #+#             */
-/*   Updated: 2025/04/19 12:20:52 by hbinti-d         ###   ########.fr       */
+/*   Updated: 2025/04/20 18:34:52 by zlaw             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,15 @@ char	**memory_allocation(int rows, int columns)
 	{
 		table[i] = (char *)malloc(sizeof(char) * columns);
 		if (table[i] == NULL)
+		{
+			while (i > 0)
+			{
+				free(table[i - 1]);
+				i--;
+			}
+			free(table);
 			return (NULL);
+		}
 		i++;
 	}
 	return (table);
