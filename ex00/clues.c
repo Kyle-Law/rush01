@@ -6,7 +6,7 @@
 /*   By: hbinti-d <hbinti-d@student.42iskandar      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/19 11:54:15 by hbinti-d          #+#    #+#             */
-/*   Updated: 2025/04/20 18:34:52 by zlaw             ###   ########.fr       */
+/*   Updated: 2025/04/20 18:56:49 by zlaw             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,54 +28,6 @@ void	set_clues(char **puzzle_board, char **clues)
 		i++;
 		j++;
 	}
-}
-
-char	**memory_allocation(int rows, int columns)
-{
-	char	**table;
-	int		i;
-
-	i = 0;
-	table = (char **)malloc(sizeof(char *) * rows);
-	if (table == NULL)
-		return (NULL);
-	while (i < rows)
-	{
-		table[i] = (char *)malloc(sizeof(char) * columns);
-		if (table[i] == NULL)
-		{
-			while (i > 0)
-			{
-				free(table[i - 1]);
-				i--;
-			}
-			free(table);
-			return (NULL);
-		}
-		i++;
-	}
-	return (table);
-}
-
-char	**create_board(void)
-{
-	char	**board;
-	int		i;
-	int		j;
-
-	board = memory_allocation(6, 6);
-	i = 0;
-	while (i < 6)
-	{
-		j = 0;
-		while (j < 6)
-		{
-			board[i][j] = '0';
-			j++;
-		}
-		i++;
-	}
-	return (board);
 }
 
 int	is_correct_params(char **argv)
