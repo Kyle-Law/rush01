@@ -6,11 +6,22 @@
 /*   By: hbinti-d <hbinti-d@student.42iskandar      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/19 10:57:51 by hbinti-d          #+#    #+#             */
-/*   Updated: 2025/04/20 18:21:16 by zlaw             ###   ########.fr       */
+/*   Updated: 2025/04/20 18:36:47 by zlaw             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "header.h"
+
+void	free_board(char **board, int rows)
+{
+	int i = 0;
+	while (i < rows)
+	{
+		free(board[i]);
+		i++;
+	}
+	free(board);
+}
 
 int	main(int argc, char **argv)
 {

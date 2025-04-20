@@ -6,7 +6,7 @@
 /*   By: hbinti-d <hbinti-d@student.42iskandar      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/19 10:55:05 by hbinti-d          #+#    #+#             */
-/*   Updated: 2025/04/20 17:14:51 by zlaw             ###   ########.fr       */
+/*   Updated: 2025/04/20 18:36:55 by zlaw             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,4 +41,5 @@ int		is_correct_col(char **board, int col);
 void	rush(char **clues);
 int		mark_success(char **puzzle_board);
 void	solve_recursive(char **board, int row, int col);
+void    free_board(char **board, int rows);
 #endif

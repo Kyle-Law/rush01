@@ -6,7 +6,7 @@
 /*   By: zlaw <zlaw@student.42ip.edu.my>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/19 16:12:07 by zlaw              #+#    #+#             */
-/*   Updated: 2025/04/20 17:16:05 by zlaw             ###   ########.fr       */
+/*   Updated: 2025/04/20 18:37:14 by zlaw             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,4 +55,6 @@ void	rush(char **clues)
 	{
 		print_error();
 	}
+	free_board(board, 6);
+	free_board(clues, 4);
 }
