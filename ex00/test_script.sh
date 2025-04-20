@@ -14,3 +14,5 @@ echo '\n'
 echo './test "3 2 1 3 1 2 4 2 3 2 2 1 2 3 1 2"'
 ./test "3 2 1 3 1 2 4 2 3 2 2 1 2 3 1 2"
 echo '\n'
+echo './test'
+./test
