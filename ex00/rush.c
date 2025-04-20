@@ -6,7 +6,7 @@
 /*   By: zlaw <zlaw@student.42ip.edu.my>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/19 16:12:07 by zlaw              #+#    #+#             */
-/*   Updated: 2025/04/20 16:46:00 by zlaw             ###   ########.fr       */
+/*   Updated: 2025/04/20 16:50:01 by zlaw             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,8 @@ void	solve_recursive(char **board, int row, int col)
 				{
 					solve_recursive(board, row + 1, 1);
 					if (row == 4 && is_correct_col(board, col))
-						print_solution(board);
+						mark_success(board);
+					print_solution(board);
 				}
 			}
 			else

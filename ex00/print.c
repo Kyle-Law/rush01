@@ -6,7 +6,7 @@
 /*   By: surajend <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/19 14:07:26 by surajend          #+#    #+#             */
-/*   Updated: 2025/04/19 14:07:29 by surajend         ###   ########.fr       */
+/*   Updated: 2025/04/20 16:49:13 by zlaw             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,13 @@ void	ft_putchar(char c)
 void	print_error(void)
 {
 	write(1, "Error\n", 6);
+}
+
+void	mark_success(char **puzzle_board)
+{
+	if (puzzle_board[0][0] == '1')
+		return ;
+	puzzle_board[0][0] = '1';
 }
 
 void	print_solution(char **puzzle_board)
