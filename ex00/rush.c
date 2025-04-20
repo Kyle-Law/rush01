@@ -6,13 +6,13 @@
 /*   By: zlaw <zlaw@student.42ip.edu.my>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/19 16:12:07 by zlaw              #+#    #+#             */
-/*   Updated: 2025/04/19 17:46:07 by zlaw             ###   ########.fr       */
+/*   Updated: 2025/04/20 11:10:54 by zlaw             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "header.h"
 
-void	rush_recursive(char **board, int row, int col)
+void	solve_recursive(char **board, int row, int col)
 {
 	int	i;
 
@@ -28,13 +28,13 @@ void	rush_recursive(char **board, int row, int col)
 			{
 				if (is_correct_left_view(board, row))
 				{
-					rush_recursive(board, row + 1, 1);
+					solve_recursive(board, row + 1, 1);
 					if (row == 4 && is_correct_top_view(board, col))
 						print_solution(board);
 				}
 			}
 			else
-				rush_recursive(board, row, col + 1);
+				solve_recursive(board, row, col + 1);
 		}
 		i++;
 	}
@@ -46,7 +46,7 @@ void	rush(char **clues)
 
 	board = create_board();
 	set_clues(board, clues);
-	rush_recursive(board, 1, 1);
+	solve_recursive(board, 1, 1);
 	if (board[0][0] == '0')
 	{
 		print_error();
