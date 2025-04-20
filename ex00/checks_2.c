@@ -10,6 +10,8 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "header.h"
+
 int	is_in_row(char **puzzle_board, int row, int column, int digit)
 {
 	int	i;
@@ -36,4 +38,15 @@ int	is_in_column(char **puzzle_board, int row, int column, int digit)
 		i++;
 	}
 	return (0);
+}
+
+
+int is_correct_row(char **board, int row)
+{
+	return ((is_correct_left_view(board, row)) && (is_correct_right_view(board, row)));
+}
+
+int	is_correct_col(char **board, int col)
+{
+	return ((is_correct_top_view(board, col)) && (is_correct_bottom_view(board, col)));
 }

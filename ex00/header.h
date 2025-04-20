@@ -36,6 +36,8 @@ char	calc_visible(char **board, int fixed, int is_row, int is_reverse);
 void	init_loop_vars(int *i, int *end, int *step, int is_reverse);
 int		is_in_column(char **puzzle_board, int row, int column, int digit);
 int		is_in_row(char **puzzle_board, int row, int column, int digit);
+int		is_correct_row(char **board, int row);
+int		is_correct_col(char **board, int col);
 void	rush(char **clues);
 
 #endif

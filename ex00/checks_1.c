@@ -16,7 +16,7 @@ int	is_correct_left_view(char **board, int row)
 {
 	if (!is_correct_view(board, row, 1, 0))
 		return (0);
-	return (is_correct_view(board, row, 1, 1));
+	return (1);
 }
 
 int	is_correct_right_view(char **board, int row)
@@ -28,7 +28,7 @@ int	is_correct_top_view(char **board, int col)
 {
 	if (!is_correct_view(board, col, 0, 0))
 		return (0);
-	return (is_correct_view(board, col, 0, 1));
+	return (1);
 }
 
 int	is_correct_bottom_view(char **board, int col)

@@ -26,10 +26,11 @@ void	solve_recursive(char **board, int row, int col)
 				break ;
 			if (col == 4)
 			{
-				if (is_correct_left_view(board, row))
+				if (is_correct_row(board, row))
 				{
 					solve_recursive(board, row + 1, 1);
-					if (row == 4 && is_correct_top_view(board, col))
+					if (row == 4 && is_correct_col(board, col))
+						// correct
 						print_solution(board);
 				}
 			}
@@ -39,6 +40,7 @@ void	solve_recursive(char **board, int row, int col)
 		i++;
 	}
 }
+
 
 void	rush(char **clues)
 {
@@ -52,3 +54,41 @@ void	rush(char **clues)
 		print_error();
 	}
 }
+
+// clues left == 1
+// i = 1, row = 1, col = 1
+// solve_recursive(board, 1, 1) {
+// 	1st loop: i == 1, row = 1, col 1
+// 		1
+// 		solve_recursive(board, 1, 2) 1 2 void <-
+// 		solve_recursive(board, 1, 3) 1 2 3 void <-
+// 		solve_recursive(board, 1, 4) 1 2 3 4 -> check is_correct_left -> false -> void
+
+// 	2nd loop: i == 2, row = 1, col = 1; 1 x x x 
+// 			// which part initialize back to 0
+// 		1 x x x
+// 		2 x x x
+// 		solve_recursive(board, 1, 2) 2 1 0 0 <- void
+// 		solve_recursive(board, 1, 3) 2 1 3 <_ void
+// 		solve_recursive(board, 1, 4) 2 1 3 4 -> check is correct left -> false <- void
+
+// 	3rd loop: i = 3, row = 1, col = 1, 2 x x x
+// 	..
+
+// 	4rd loop: i = 4, row = 1 , col = 1, '3 x x x'
+// 		'4 x x x'
+// 		solve_recursive(board, 1, 2) 4 1 0 0 
+// 		solve_recursive(board, 1, 3) 4 1 2
+// 		solve_recursive(board, 1, 4) 4 1 2 3 -> check is correct left -> true
+// 			'4 1 2 3'
+// 			solve_recursive(board, 2, 1)
+// 			...
+
+
+// 			4123
+// 			1234
+// 			2341
+// 			3412
+
+
+// }
